@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title data-lang="title">Momentum</title>
+</head>
+
+<body>
+  <header class="header">
+
+    <!-- Player -->
+    <div class="player widget-container js-widget-container">
+      <div class="player__song-title js-player-song-title"></div>
+      <div class="player__controls">
+        <button class="player__btn player__btn--back icon-previous js-player-btn-back" type="button"></button>
+        <button class="player__btn player__btn--play icon-play  js-player-btn-play" type="button">
+        </button>
+        <button class="player__btn player__btn--forward icon-next js-player-btn-forward" type="button"></button>
+        <input class="player__range player__progress-bar js-player-audio-progress" value="0" min="0" max="100"
+          type="range">
+        <div class="player__duration-wrapper">
+          <span class="player__timer js-player-timer">0:00</span>
+          /
+          <span class="player__duration js-player-duration">1:00</span>
+        </div>
+        <button class="player__btn player__btn--volume icon-volumeHigh js-player-btn-volume" type="button"></button>
+        <input class="player__range player__volume js-player-volume-progress" min="0" max="100" type="range">
+      </div>
+      <div class="player__list-wrapper">
+        <ul class="player__list js-player-list">
+        </ul>
+      </div>
+    </div>
+    <div class="weather">
+      <input type="text" value="Minsk" class="city" />
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div data-lang="wind" class="wind"></div>
+      <div data-lang="humidity" class="humidity"></div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" value="[ENTER name]" class="name" />
+    </div>
+    <div class="phrases">
+      <button class="change-quote"></button>
+      <div>
+        <div class="quote"></div>
+        <div class="author"></div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+
+    <section class="setting-section">
+      <div class="settings display-none">
+        <div class="languages">
+          <p data-lang="choose-language">Choose language:</p>
+          <span class="languages-item" data-langswitch="en">EN</span>
+          /
+          <span class="languages-item" data-langswitch="ru">RU</span>
+        </div>
+        <hr class="settings-decor-line">
+        <div class="settings__info setting">
+          <div class="setting__background">
+            <p class="setting-title" data-lang="image-source">Image source:</p>
+
+            <div class="radio-buttons">
+              <label for="github" class="source-buttons">
+                <input id="github" value="github" name="radio" type="radio" class="radio-buttons github">
+                GiHub
+              </label>
+
+              <label for="unsplash" class="source-buttons">
+                <input id="unsplash" value="unsplash" name="radio" type="radio" class="radio-buttons unsplash">
+                Unsplash
+              </label>
+
+              <label for="flickr" class="source-buttons">
+                <input id="flickr" value="flickr" name="radio" type="radio" class="radio-buttons flickr">
+                Flickr
+              </label>
+            </div>
+            <input class="search_panel" placeholder="What are we looking for?" id="background-tag" autocomplete="off">
+            <p class="search_panel-words">Mexico</p>
+          </div>
+          <hr class="settings-decor-line">
+          <div class="setting__display">
+            <div class="checkbox-buttons">
+              <p class="setting-title" id="hide-show-blocks" data-lang="show-blocks">Customize your dashboard:</p>
+              <div class="checkbox-buttons__columns">
+
+                <div class="checkbox-buttons__first">
+                  <label for="time">
+                    <input id="time" type="checkbox" name="check" class="checkbox-time" checked>
+                    <p data-lang="time">Time</p>
+                  </label>
+
+                  <label for="date">
+                    <input id="date" type="checkbox" name="check" class="checkbox-date" checked>
+                    <p data-lang="date">Date</p>
+                  </label>
+
+                  <label for="player">
+                    <input id="player" type="checkbox" name="check" class="checkbox-player" checked>
+                    <p data-lang="player">Player</p>
+                  </label>
+                </div>
+
+                <div class="checkbox-buttons__second">
+                  <label for="greeting">
+                    <input id="greeting" type="checkbox" name="check" class="checkbox-greeting" checked>
+                    <p data-lang="greeting">Greeting</p>
+                  </label>
+
+                  <label for="quote">
+                    <input id="quote" type="checkbox" name="check" class="checkbox-quote" checked>
+                    <p data-lang="quote">Quote</p>
+                  </label>
+                </div>
+
+                <div class="checkbox-buttons__third">
+                  <label for="weather">
+                    <input id="weather" type="checkbox" name="check" class="checkbox-weather" checked>
+                    <p data-lang="weather">Weather</p>
+                  </label>
+
+                  <label for="todo">
+                    <input id="todo" type="checkbox" name="check" class="checkbox-todo" checked>
+                    <p data-lang="todo">Todo</p>
+                  </label>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="setting-button"></div>
+    </section>
+
+    <div class="contacts">
+      <ul class="footer-links">
+        <li class="footer-item footer-rsschool">
+          <a href="https://rs.school/js/" class="link-footer" target="_blank">
+            <img src="./assets/svg/rsschool-logo.svg" alt="rs_school-logo" class="rs_school-logo">
+          </a>
+        </li>
+        <li class="footer-item footer_year">20<br>23</li>
+        <li class="footer-item">
+          <a href="https://github.com/JuliaAvona" class="link-footer" target="_blank">
+            <img src="./assets/svg/github-logo.svg" alt="github-logo" class="github-logo">
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <section class="todo-list-section">
+      <div class="todo-list-wrapper hidden">
+        <ul class="todo-list">
+          <li class="todo-list-item">
+            <label>
+              <input class="todo-list-input" type="checkbox">
+              <span data-lang="task1">Feed the cat</span>
+            </label>
+          </li>
+          <li class="todo-list-item">
+            <label>
+              <input class="todo-list-input" type="checkbox">
+              <span data-lang="task2">Call Elon Musk</span>
+            </label>
+          </li>
+        </ul>
+        <p class="empty-tasks hidden" data-lang="empty-tasks">All tasks completed. There are no new tasks.</p>
+        <form class="add-form" action="URL" method="post">
+          <input class="add-form-input" type="text" aria-label="Task description" placeholder="For example, buy milk"
+            required>
+          <button class="add-form-button" type="submit" data-lang="add-task">Add task</button>
+        </form>
+
+        <template class="task-template">
+          <li class="todo-list-item">
+            <label>
+              <input type="checkbox" class="todo-list-input">
+              <span></span>
+            </label>
+          </li>
+        </template>
+      </div>
+      <div class="todo-list-button" data-lang="todo-list-button">TODO</div>
+    </section>
+  </footer>
+  <script type="module" src="./js/script.js"></script>
+  <script type="module" src="./js/audio-pleer.js"></script>
+</body>
+
+</html>
